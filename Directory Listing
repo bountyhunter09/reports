@@ -1,0 +1,32 @@
+Directory Listing
+
+Summary :Directory Listing is a vulnerabilty in which the server has misconfiguration and exposes the internal and hidden directories from the server to the public internet.
+Sometime an attacker can gain sensitive information from the server like backup files, source code , api keys , password files etc.
+
+
+Severity :   Medium  
+
+Complexity : Easy 
+
+From : Remote / External
+
+Steps to Reproduce:
+
+Proof of Concept : Attached in the Video
+
+
+Impact : An Adversary can carry out Directory Listing to gain sensitive information from the target server
+
+Affected IP's : IP Address	 Port
+https://www.example.com/      443
+
+Recommendations : 
+The application should have proper permissions on sensitive directories and content.
+ 
+References : 
+https://www.acunetix.com/blog/articles/directory-listing-information-disclosure/#:~:text=Directory%20listing%20is%20a%20web,it%20leads%20to%20information%20disclosure.
+
+
+Proof of Concept :
+
+
