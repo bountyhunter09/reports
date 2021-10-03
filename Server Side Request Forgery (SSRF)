@@ -1,0 +1,37 @@
+SSRF 
+
+Summary : Server-side request forgery (also known as SSRF) is a web security vulnerability that allows an attacker to induce the server-side application to make HTTP requests to an arbitrary domain of the attacker's choosing.
+In typical SSRF examples, the attacker might cause the server to make a connection back to itself, or to other web-based services within the organization's infrastructure, or to external third-party systems
+
+Severity :   High  
+
+POST Request : 
+
+Complexity : Easy 
+
+From : Remote / External
+
+Steps to Reproduce:
+
+1. Attacker finds the vulnerable injection point (parameter)
+2. Attacker sends a localhost request or request to his controlled domain (eg: Burp collaborator)
+3. Attacker is able to scan the internal network or connect to localhost. Also attacker can get a HTTP connection on his controlled domain.
+4. Attacker successfully performs SSRF and exfiltrates data if any.
+
+Impact : An Adversary can carry out SSRF attack to scan the internal network, perform sensitive actions, download sensitive files like meta-data etc.
+
+Affected IP's : IP Address	Port
+https://www.india.gov.in/	443
+
+Recommendations : 
+There should be a proper validation and sanitization of any URL's,IP or shortlinks given by the user. More here - https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html
+ 
+References : 
+https://portswigger.net/web-security/ssrf
+https://www.acunetix.com/blog/articles/server-side-request-forgery-vulnerability/
+
+Proof of Concept :
+
+Attached Screenshot or Video
+
+
