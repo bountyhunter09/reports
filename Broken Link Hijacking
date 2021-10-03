@@ -1,0 +1,36 @@
+Broken Link Hijacking
+
+Summary : When an web application has any pages, sources, links to external 3rd party services and are broken then the attacker can claim those endpoints to successfully conduct the attack and claim those endpoints on behalf of the target website and impersonate his identity.
+
+Severity :   Medium  
+
+POST Request : 
+
+Complexity : Easy 
+
+From : Remote / External
+
+Steps to Reproduce:
+
+1. Attacker finds the vulnerable injection point (broken link)
+2. Attacker is able to claim the broken link
+3. Attacker is succesfully perfrom the BLH Attack
+
+Impact : An Adversary can carry out BLH attack to trick the victim in clicking the link and visiting the resources which are linked to the website, this way attacker can perfrom identify theft and steal credentials.
+
+Affected IP's : IP Address	Port
+https://www.india.gov.in/	443
+
+Recommendations : 
+Fix all the broken links in the web application to any external resources.
+
+References : 
+https://medium.com/@iamtess5277/what-is-broken-link-hijacking-o-o-872d821da6fd
+https://medium.com/@arbazhussain/broken-link-hijacking-burp-plugin-6918d922c3fb
+https://hackerone.com/reports/266908
+
+
+
+Proof of Concept :
+
+Attached Screenshot or Video
