@@ -1,0 +1,34 @@
+SQL Injection
+
+Summary : SQL injection is a web security vulnerability that allows an attacker to interfere with the queries that an application makes to its database. It generally allows an attacker to view data that they are not normally able to retrieve. This might include data belonging to other users, or any other data that the application itself is able to access. In many cases, an attacker can modify or delete this data, causing persistent changes to the application's content or behavior.
+
+Severity :   High  
+
+POST Request : 
+
+Complexity : Easy 
+
+From : Remote / External
+
+Steps to Reproduce:
+
+1. Attacker finds the vulnerable injection point (parameter)
+2. Attacker sends a query to retreive the DB Version or DB Name or DB Tables
+3. Attacker is able to perfrom successfull SQLi
+
+Impact : An Adversary can carry out SQLi attack to download database,usernames,passwords modify the logic or  perform sensitive actions etc.
+
+Affected IP's : IP Address	Port
+https://www.india.gov.in/	443
+
+Recommendations : 
+Most instances of SQL injection can be prevented by using parameterized queries (also known as prepared statements) instead of string concatenation within the query.
+
+References : 
+https://portswigger.net/web-security/sql-injection
+https://www.acunetix.com/vulnerabilities/web/sql-injection/
+
+
+Proof of Concept :
+
+Attached Screenshot or Video
